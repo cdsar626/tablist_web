@@ -1,0 +1,16 @@
+---
+export interface Props {
+    buttons: Array<Button>;
+}
+
+export interface Button {
+    title: string,
+    href: string,
+}
+
+const { buttons } = Astro.props;
+---
+
+<ul class="bg-cyan-300 flex rounded-md justify-evenly text-xl fixed shadow-xl bottom-0 w-full">
+    { buttons.map((obj) => <li class="hover:bg-cyan-500 drop-shadow-[2_20px_20px_rgba(0,0,0,0.25)] rounded-md p-4"><a href={obj.href}>{obj.title}</a></li>)}
+</ul>
